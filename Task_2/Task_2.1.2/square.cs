@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Task_2._1._2
 {
-    class Square
+    public class Square : AbstractFigure
     {
-        public int a;
-        public int b;
-        public int GetArea()
+        public int side;
+        public Square(int x, int y, int side) : base(x, y)
         {
-            int area = a * b;
-            return area;
         }
-        
+        public int GetArea(int side) => this.side * this.side;
     }
 }

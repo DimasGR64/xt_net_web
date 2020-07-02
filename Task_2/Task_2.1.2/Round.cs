@@ -8,6 +8,9 @@ namespace Task_2._1._2
 {
     public class Round : AbstractCircleFigure
     {
-        public virtual double GetLenght(double radial) => 2 * Math.PI * radial;
+        public Round(int x, int y, int radius) : base(x, y, radius)
+        {
+        }
+        public virtual double GetLenght(double radial) => 2 * Math.PI * this.radial;
     }
 }

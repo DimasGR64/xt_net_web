@@ -10,113 +10,132 @@ namespace Task_2._1._2
     {
         public static void FigureCreate()
         {
-            //var str = Console.ReadLine();
-            //var type = (FigureType)Enum.Parse(typeof(FigureType), str);
-            //Console.WriteLine("input param figure " + type);
             int start = 0;
-            FigureType figure = FigureType.None;
+            WelcomePrint print = new WelcomePrint();
+            List<AbstractFigure> figureCollections = new List<AbstractFigure> { };
             do
             {
-                Program.VelcomePrint();
+                print.VelcomePrint();
                 int.TryParse(Console.ReadLine(), out start);
                 switch (start)
                 {
                     case 1:
-                        Console.WriteLine("Выберете тип фигуры:" +
-                            "\n1. Окружность" +
-                            "\n2. Круг" +
-                            "\n3. Диск");
-                        int select;
-                        int.TryParse(Console.ReadLine(), out select);
-                        if (select == 1)
-                        {
-                            CreateFigure.RoundCreate();
-                            figure = figure ^ FigureType.Round;
-                        }
-                        else if (select == 2)
-                        {
-                            CreateFigure.CircleCreate();
-                            figure = figure ^ FigureType.Circle;
-                        }
-                        else if (select == 3)
-                        {
-                            CreateFigure.DiscCreate();
-                            figure = figure ^ FigureType.Disc;
-                        }
-                        else
-                        {
-                            CreateFigure.SquareCreate();
-                            figure = figure ^ FigureType.Square;
-                        }
+                        AbstractFigure figure = SelectFigure();
+                        AddFigure(figure, figureCollections);
                         break;
                     case 2:
-                        Console.WriteLine("Выведены фигуры " + figure);
-                        Console.WriteLine("-------------");
+                        ShowFigure(figureCollections);
                         break;
                     case 3:
-                        figure = FigureType.None;
-                        Console.WriteLine("-------------");
+                        
                         break;
                     default:
                         break;
                 }
             } while (start != 4);
         }
-        public static void RoundCreate()
+        public static AbstractFigure SelectFigure()
         {
-            Round round = new Round();
-            Console.WriteLine("input parametr figure round");
-            Console.WriteLine("input coordinate centr: x and y");
-            int.TryParse(Console.ReadLine(), out round.X);
-            int.TryParse(Console.ReadLine(), out round.Y);
-            Console.WriteLine("input radius");
-            double.TryParse(Console.ReadLine(), out round.radial);
-            Console.WriteLine("figure circle created");
-            Console.WriteLine("-------------");
+            Console.WriteLine("Выберете тип фигуры:" +
+                "\n1. Окружность" +
+                "\n2. Круг" +
+                "\n3. Диск" +
+                "\n4. Квадрат" +
+                "\n5. Линия");
+            int select;
+            int.TryParse(Console.ReadLine(), out select);
+            if (select == 1)
+            {
+                return RoundCreate();
+            }
+            else if (select == 2)
+            {
+
+                return CircleCreate();
+            }
+            else if (select == 3)
+            {
+                return DiscCreate();
+            }
+            else if (select == 4)
+            {
+                return SquareCreate();
+            }
+            else
+            {
+                return LineCreate();
+            }
         }
-        public static void CircleCreate()
+        public static void AddFigure(AbstractFigure figure, List<AbstractFigure> list)
         {
-            Circle circle = new Circle();
-            Console.WriteLine("input parametr figure circle");
-            Console.WriteLine("input coordinate centr: x and y");
-            int.TryParse(Console.ReadLine(), out circle.X);
-            int.TryParse(Console.ReadLine(), out circle.Y);
-            Console.WriteLine("input radius");
-            double.TryParse(Console.ReadLine(), out circle.radial);
-            Console.WriteLine("figure circle created");
-            Console.WriteLine("-------------");
+            list.Add(figure);
         }
 
-        public static void DiscCreate()
+        public static void ShowFigure(List<AbstractFigure> list)
         {
-            Disc disc = new Disc();
-            Console.WriteLine("input coordinate centr: x and y");
-            int.TryParse(Console.ReadLine(), out disc.X);
-            int.TryParse(Console.ReadLine(), out disc.Y);
+            for (int i = 0; i < list.ToArray().Length; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
+        }
+        public static AbstractFigure RoundCreate()
+        {
+            Console.WriteLine("input coordinate point a X1 and Y1");
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
             Console.WriteLine("input radius");
-            double.TryParse(Console.ReadLine(), out disc.radial);
+            int radial = int.Parse(Console.ReadLine());
+            Console.WriteLine("figure circle created");
+            Console.WriteLine("-------------");
+            return new Round(x1, y1, radial);
+        }
+        public static AbstractFigure CircleCreate()
+        {
+            Console.WriteLine("input coordinate point a X1 and Y1");
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("input radius");
+            int radial = int.Parse(Console.ReadLine());
+            Console.WriteLine("figure circle created");
+            Console.WriteLine("-------------");
+            return new Circle(x1, y1, radial);
+        }
+
+        public static AbstractFigure DiscCreate()                       
+        {
+            Console.WriteLine("input coordinate point a X1 and Y1");
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("input radius");
+            int radial = int.Parse(Console.ReadLine());
             Console.WriteLine("input inside radius");
-            double.TryParse(Console.ReadLine(), out disc.radial);
+            int Insideradial = int.Parse(Console.ReadLine());
             Console.WriteLine("figure disc created");
             Console.WriteLine("-------------");
+            return new Disc(x1, y1, radial, Insideradial);
         }
-        public static void SquareCreate()
+        public static AbstractFigure SquareCreate()
         {
-            Square square = new Square();
-            Console.WriteLine("input side a and side b");
-            int.TryParse(Console.ReadLine(), out square.a);
-            int.TryParse(Console.ReadLine(), out square.b);
+            Console.WriteLine("input coordinate point a X1 and Y1");
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("input side");
+            int side = int.Parse(Console.ReadLine());
             Console.WriteLine("figure square created");
             Console.WriteLine("-------------");
+            return new Square(x1, y1, side);
         }
-    }
-    [Flags]
-    public enum FigureType : byte
-    {
-        None = 0,
-        Round = 1,
-        Circle = 2,
-        Disc = 3,
-        Square = 4
+        public static AbstractFigure LineCreate()
+        {
+            Console.WriteLine("input coordinate point a X1 and Y1");
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("input coordinate point b X2 and Y2");
+            int x2 = int.Parse(Console.ReadLine());
+            int y2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("figure line created");
+            Console.WriteLine("-------------");
+            return new Line(x1, y1, x2, y2);
+        }
     }
 }

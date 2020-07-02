@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Task_2._1._2
 {
-    class Disc : Round
+    class Disc : AbstractCircleFigure
     {
         public double InsideRadial;
-
-        public override double GetLenght(double InsideRadial) => base.GetLenght(radial) + 2 * Math.PI * InsideRadial;
+        public Disc(int x, int y, int radius, int InsideRadial) : base(x,y,radius)
+        {
+        }
+        public double GetLenght(double InsideRadial) => 2 * Math.PI * (radial + InsideRadial);
         public virtual double GetArea(double InsideRadial) => 2 * Math.PI * (radial - InsideRadial);
     }
 }
