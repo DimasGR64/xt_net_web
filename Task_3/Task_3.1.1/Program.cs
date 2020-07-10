@@ -43,7 +43,7 @@ namespace Task_3._1._1
                 {
                     if (i % del == 0)
                     {
-                        
+
                         ++round;
                         people.RemoveAt(i);
                         Console.WriteLine("Round {0}. People delete. Number of people: {1}", round, people.Count);
@@ -57,6 +57,6 @@ namespace Task_3._1._1
                 }
             }
             Console.WriteLine("Game Over. Impossible cross out more people");
-        } 
+        }
     }
 }
