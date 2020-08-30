@@ -1,0 +1,41 @@
+.form_smartly {
+    border: solid #0075B2 3px;
+    width: 350px;
+    background-color: #0690CF;
+    color: #FFFFFF;
+    font-family: Arial;
+}
+
+.form_smartly > div {
+    padding: 20px;
+}
+
+.form_smartly .data > div {
+    padding: 20px 35px 0 0;
+}
+
+.form_smartly input[type=text], .form_smartly input[type=password] {
+    width: 100%;
+}
+
+.form_smartly .header {
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 1.5em;
+}
+
+.form_smartly .data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form_smartly .email {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.form_smartly .footer input[type=submit] {
+    background-color: #FFDF7F;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}

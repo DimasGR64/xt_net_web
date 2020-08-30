@@ -1,0 +1,15 @@
+.list {
+    width: 200px;
+    border: solid 1px;
+    border-color: #B22222;
+    border-radius: 5px;
+    box-shadow: #880000 5px 5px;
+    color: #fae969;
+    background-color: #ffa500;
+    padding: 10px;
+}
+
+.list>li {
+    list-style-type: none;
+    padding: 0.2em 0;
+}
