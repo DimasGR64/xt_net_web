@@ -1,0 +1,36 @@
+﻿﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Task 8_5</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="storage.js"></script>
+    <script src="common.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="search">
+                <div><img src="search.png" id="search_but" alt="Поиск" /></div>
+                <input type="text" id="find_text" placeholder="Поиск" />
+            </div>
+        </div>
+        <div id="notes_wrapper">
+        </div>
+        <div id="add">+</div>
+        <div class="disabled" id="blocker">
+            <div class="win_wrapper">
+                <div class="win">
+                    <div class="win_header"><input type="text" id="win_header_text" placeholder="Введите заголовок"></div>
+                    <div class="win_text"><textarea id="win_text_text" placeholder="Текст заметки"></textarea></div>
+                    <div class="Win_footer">
+                        <button id="but_save">Сохранить</button>
+                        <button id="but_close">Закрыть</button>
+                    </div>
+                    <input type="hidden" id="win_id" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+*:checked {
+    border: none;
+}
+
+body {
+    font-family: Arial;
+}
+
+.disabled {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.warning {
+    box-shadow: 0 0 3px 0px red;
+}
+
+.wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    border-style: solid;
+    border-color: #D4D4D4;
+    border-width: 10px 0;
+    margin-bottom: 10px;
+}
+
+.search {
+    width: auto;
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 1px;
+    border: none;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.search img {
+    height: 50px;
+}
+
+input[type=text] {
+    border: none;
+    background-color: inherit;
+    font-size: 1em;
+    width: 100%;
+}
+
+.note {
+    width: 800px;
+    border-radius: 10px;
+    border: 1px solid #D4D4D4;
+    margin: 10px;
+    font-size: 1em;
+    overflow: hidden;
+}
+
+.note > * {
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+.note_header {
+    font-size: 1.2em;
+}
+
+.delete_note {
+    text-align: right;
+
+}
+
+    .delete_note > img {
+	
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px 15px;
+        cursor: pointer;
+    }
+
+img {
+    height: 25px;
+}
+
+#add {
+    width: 60px;
+    height: 60px;
+    border-radius: 35px;
+    background-color: #2AB5F8;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+#blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.win_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.win {
+    background-color: white;
+    width: 450px;
+    height: 250px;
+    border-style: none;
+    border-width: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 #555;
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+}
+
+.win>div {
+    padding: 10px;
+}
+
+.win_header, .win_text {
+    margin: 5px;
+}
+
+.win_text textarea {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border: none;
+    resize: none;
+}
+
+.win_footer {
+    box-shadow: 0 -2px 5px -1px #CCC;
+    text-align: right;
+}
+
+.win_footer button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
