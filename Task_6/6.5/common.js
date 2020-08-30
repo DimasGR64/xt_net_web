@@ -74,7 +74,7 @@ function EditNote(node) {
 
 function DeleteNote(node) {
     event.stopPropagation();
-    result = confirm("Вы действительно хотите удалить заметку?");
+    result = confirm("Думаете стоит удалить?");
     if (!result)
         return;
     let id = node.firstChild.value;
@@ -128,15 +128,6 @@ function PrintNote(note) {
     note_div.append(delete_but);
 
     notes_wrapper.prepend(note_div);
-}
-
-// Здесь нафиг не нужна, но если брать заметки из бэка - то понадобится
-function GetNotesFromStorage() {
-    let notes = storage.getAll();
-
-    for (let i = notes.length - 1; i >= 0; i--) {
-        PrintNote(notes[i]);
-    }
 }
 
 function WindowOpen(note_header = "", note_text = "", note_id = "") {
