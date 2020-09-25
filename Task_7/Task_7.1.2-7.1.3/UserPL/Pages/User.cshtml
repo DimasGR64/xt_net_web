@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<div>
+    <label>input UserName and age</label>
+    <p></p>
+    <label>User:</label>
+    <input type="text" name="" value="" />
+    <p></p>
+    <label>Age:</label>
+    <input type="text" name="" value="" />
+    <p></p>
+    <button id="addUser">add</button>
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script>
+        $('#addUser').click(function () {
+            location.href = '/Pages/AddUser'
+        });
+    </script>
+</div>
+

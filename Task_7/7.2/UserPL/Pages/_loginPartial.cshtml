@@ -1,0 +1,21 @@
+﻿@using PLConsole;
+
+@{
+
+}
+<div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="alert-info">Hello, @User.Identity.Name</div>
+        <div>
+            <a href="~/Pages/SignOut.cshtml">Sign out</a>
+        </div>
+    }
+    else
+    {
+        <div class="alert-info">Hello, guest, you make registration</div>
+        <div>
+            <a href="~/Pages/registration">registration</a>
+        </div>
+    }
+</div>

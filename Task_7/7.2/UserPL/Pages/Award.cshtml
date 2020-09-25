@@ -1,0 +1,19 @@
+﻿@using User.BLL;
+@{
+    Layout = null;
+}
+
+<div>
+    <label>input name of award</label>Pages
+    <p></p>
+    <label>Award:</label>
+    <input type="text" name="name" value="" />
+    <p></p>
+    <button id="addAward">add_award</button>
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script>
+        $('#addAward').click(function () {
+            location.href = '/Pages/AddAward'
+        });
+    </script>
+</div>

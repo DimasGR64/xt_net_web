@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+
+    //if (IsPost)
+    //{
+    //    try
+    //    {
+    //        User = Request["User"];
+    //        Award = Request["Award"];
+    //    }
+    //    catch (Exception)
+    //    {
+
+    //        throw;
+    //    }
+    //}
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    @RenderPage("~/Pages/_loginPartial.cshtml")
+    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+    {
+        <div>
+            <form action="/" method="post">
+                @RenderPage("~/Pages/User.cshtml")
+                @RenderPage("~/Pages/Award.cshtml")
+                @RenderPage("~/Pages/DelUser.cshtml")
+                @RenderPage("~/Pages/DelAward.cshtml")
+            </form>
+        </div>
+    }
+</body>
+</html>
