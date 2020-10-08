@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<div>
+    <label>input information about player</label>
+    <p></p>
+    <label>Name:</label>
+    <input type="text" name="" value="" />
+    <p></p>
+    <label>Amplua:</label>
+    <input type="text" name="" value="" />
+    <p></p>
+    <label>Age:</label>
+    <input type="text" name="" value="" />
+    <p></p>
+    <button id="addPlayer">add</button>
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script>
+        $('#addPlayer').click(function () {
+            location.href = '/ManipulationPages/AddPlayer'
+        });
+    </script>
+</div>

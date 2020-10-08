@@ -1,0 +1,38 @@
+﻿@using EPAM.FoolballManager.Coach.BLL;
+@{
+    int id;
+    if (IsPost)
+    {
+        id = int.Parse(Request["ID"]); ;
+        CoachManager del = new CoachManager();
+        del.DeletePlayer(id);
+        //Response.Redirect("/");
+    }
+}
+<div>
+    <label>please, input ID player, with delete him</label>
+    <p></p>
+</div>
+<div>
+        <form action="/" method="post" class="form">
+            <div>
+                <label>ID</label>
+                <input type="text" name="ID" value="" />
+            </div>
+            <button class="btn-info">delete</button>
+        </form>
+</div>
+    @*<div>
+        <label>please, input ID player, with delete him</label>
+        <p></p>
+        <label>ID:</label>
+        <input type="text" name="" value="" />
+        <p></p>
+        <button id="delPlayer">delete</button>
+        <script src="~/Scripts/jquery-3.0.0.js"></script>*@
+        @*<script>
+                $('#delPlayer').click(function () {
+                    location.href = '/ManipulationPages/DelPlayer'
+                });
+            </script>*@
+    @*</div>*@

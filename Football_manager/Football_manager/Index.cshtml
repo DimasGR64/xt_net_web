@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    @RenderPage("~/Pages/_loginPartial.cshtml")
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Yuri_Siomin"))
+    {
+        <div>
+            <form action="/" method="post">
+                @RenderPage("~/Pages/CoachMenu.cshtml")
+            </form>
+        </div>
+    }
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Medic"))
+    {
+        <div>
+            <form action="/" method="post">
+                @RenderPage("~/Pages/MedicMenu.cshtml")
+            </form>
+        </div>
+    }
+</body>
+</html>

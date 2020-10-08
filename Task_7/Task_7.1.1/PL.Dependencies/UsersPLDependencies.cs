@@ -11,6 +11,6 @@ namespace PL.Dependencies
     public static class UsersPLDependencies
     {
         private static IUserPL _userPL;
-        //public static IUserPL UserPL => _userPL ?? (_userPL = new PLConsole());
+        public static IUserPL UserPL => _userPL ?? (_userPL = new PLConsole());
     }
 }

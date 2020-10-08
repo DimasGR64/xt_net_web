@@ -1,0 +1,39 @@
+﻿@using PLConsole;
+@{
+    int Player_ID;
+    int Card_ID;
+    PLConsoles delCard = new PLConsoles();
+
+    if (IsPost)
+    {
+        Card_ID = int.Parse(Request["Card_ID"]);
+        Player_ID = int.Parse(Request["Player_ID"]);
+        delCard.DelCardsToPlayer(Card_ID, Player_ID);
+        Response.Redirect("/");
+    }
+
+
+}
+<body>
+    @if (IsPost)
+    {
+        <div class="alert-info">
+            you del card to player
+        </div>
+    }
+    <p></p>
+    <label>please, input Player_ID and Card_ID</label>
+    <p></p>
+    <form action="/" method="post" class="form">
+        <div>
+            <label>Player_ID</label>
+            <input type="text" name="Player_ID" value="" />
+        </div>
+        <div>
+            <label>Card_ID:</label>
+            <input type="text" name="Card_ID" value="" />
+        </div>
+        <button class="btn-info">+</button>
+    </form>
+</body>
+

@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<div>
+    <label>you make delete or add inlurny to player</label>
+
+
+    <button id="addInjuryToPlayer">add injurny</button>
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script>
+        $('#addInjuryToPlayer').click(function () {
+            location.href = '/ManipulationPages/AddInjuredPlayer'
+        });
+    </script>
+    <button id="delInjuryToPlayer">del injurny</button>
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script>
+        $('#addInjuryToPlayer').click(function () {
+            location.href = '/ManipulationPages/DelInjuredPlayer'
+        });
+    </script>
+</div>
