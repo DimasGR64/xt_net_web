@@ -1,8 +1,8 @@
-﻿@using PLConsole;
+﻿@using EPAM.FoolballManager.Coach.BLL;
 @{
     int Player_ID;
     int Card_ID;
-    PLConsoles addCard = new PLConsoles();
+    CoachManager addCard = new CoachManager();
 
     if (IsPost)
     {
@@ -11,8 +11,6 @@
         addCard.AddCardsToPlayer(Card_ID, Player_ID);
         Response.Redirect("/");
     }
-
-
 }
 <body>
     @if (IsPost)

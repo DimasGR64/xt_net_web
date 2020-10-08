@@ -12,12 +12,12 @@ namespace Prog
         public static CoachManager BLL => new CoachManager();
         static void Main(string[] args)
         {
-            //BLL.AddNewPlayer("Vasya", 2, 43);
-            //Console.WriteLine("123");
-            foreach (var item in BLL.GetAllPlayers())
-            {
-                System.Console.WriteLine(item);
-            }
+            BLL.DeletePlayer(18);
+            Console.WriteLine("123");
+            //foreach (var item in BLL.GetAllPlayers())
+            //{
+            //    Console.WriteLine(item);
+            //}
         }
     }
 }

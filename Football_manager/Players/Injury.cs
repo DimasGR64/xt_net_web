@@ -18,7 +18,7 @@ namespace EPAM.FoolballManager.Entites
     {
         public MusculeInjurny(DateTime recoveryTime) : base(recoveryTime)
         {
-
+            
         }
     }
     public class TendonRupture : AbstractInjurny

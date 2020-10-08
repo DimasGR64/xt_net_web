@@ -1,8 +1,8 @@
-﻿@using PLConsole;
+﻿@using EPAM.FoolballManager.Coach.BLL;
 
 @{
     int ID;
-    PLConsoles choose = new PLConsoles();
+    CoachManager choose = new CoachManager();
     if (IsPost)
     {
         ID = int.Parse(Request["a"]);
